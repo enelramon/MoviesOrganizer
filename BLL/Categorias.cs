@@ -24,7 +24,7 @@ namespace BLL
         }
 
 
-        private bool Insertar()
+        public  bool Insertar()
         {
             bool retorno = false;
 
