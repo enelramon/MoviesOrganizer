@@ -88,6 +88,7 @@
     <EmbeddedResource Include="Registros\CategoriasForm.resx">
       <DependentUpon>CategoriasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

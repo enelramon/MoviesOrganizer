@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 
 namespace DAL
 {
@@ -17,7 +18,7 @@ namespace DAL
 
         public ConexionDb()
         {
-            con = new SqlConnection("Data Source=(local);Initial Catalog=Aplicada1Db;Integrated Security=True");
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString);
             Cmd = new SqlCommand();
         }
 
