@@ -7,20 +7,20 @@ using System.Data;
 
 namespace BLL
 {
-    public class Categorias: ClaseMaestra
+    public class Categorias : ClaseMaestra
     {
-        public int Id { get; set; }
+        public int CategoriaId { get; set; }
         public string Descripcion { get; set; }
 
         public Categorias()
         {
-            this.Id = 0;
+            this.CategoriaId = 0;
             this.Descripcion = "";
         }
 
         public Categorias(int id, string descripcion)
         {
-            this.Id = id;
+            this.CategoriaId = id;
             this.Descripcion = descripcion;
         }
 
@@ -50,10 +50,21 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+
+            ConexionDb conexion = new ConexionDb();
+            DataTable dt = new DataTable();
+
+            dt = conexion.ObtenerDatos("Select * from Categorias Where CategoriaId=" + IdBuscado);
+            if (dt.Rows.Count > 0)
+            {
+                this.CategoriaId = (int)dt.Rows[0]["CategoriaId"];
+                this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
+            }
+
+            return dt.Rows.Count > 0;
         }
 
-        public override  DataTable Listado(string Campos, string Condicion, string Orden)
+        public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             throw new NotImplementedException();
         }

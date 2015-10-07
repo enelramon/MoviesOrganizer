@@ -24,5 +24,19 @@ namespace MoviesOrganizer.Registros
 
             categoria.Insertar();
         }
+
+        private void textBox1_Validated(object sender, EventArgs e)
+        {
+            Categorias categoria = new Categorias();
+
+            if (CategoriaIDtextBox.Text.Length > 0 )
+            {
+              if(  categoria.Buscar(int.Parse(CategoriaIDtextBox.Text)))
+                {
+                    DescripciontextBox.Text = categoria.Descripcion;
+                }
+
+            }
+        }
     }
 }
