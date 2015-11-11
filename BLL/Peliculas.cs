@@ -40,7 +40,7 @@ namespace BLL
             bool retorno = false;
             StringBuilder Comando = new StringBuilder();
 
-            retorno = conexion.Ejecutar(String.Format("insert into Peliculas(Titulo,Descripcion,Ano,Calificacion,IMBD, CategoriaId,Foto,Video,Genero,Actor,Estudio) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.Imbd, this.categoriaId, this.Direccion, this.Video, this.Genero, this.Actor, this.Estudio));
+           // retorno = conexion.Ejecutar(String.Format("insert into Peliculas(Titulo,Descripcion,Ano,Calificacion,IMBD, CategoriaId,Foto,Video,Genero,Actor,Estudio) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.Imbd, this.categoriaId, this.Direccion, this.Video, this.Genero, this.Actor, this.Estudio));
             if (retorno)
             {
                 this.PeliculaId = (int)conexion.ObtenerValor("Select Max(PeliculaId) from Peliculas");

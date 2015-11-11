@@ -66,7 +66,8 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            throw new NotImplementedException();
+            ConexionDb conexion = new ConexionDb();
+            return conexion.ObtenerDatos("Select * from Categorias"  );
         }
     }
 }

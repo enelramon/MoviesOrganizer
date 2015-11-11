@@ -24,7 +24,7 @@ namespace MoviesOrganizer.Registros
 
 
             //HACER UN CICLO PARA RECORER EL LISTBOX PELICULA.AgregarAutor()
-            c
+            
             categoria.Insertar();
         }
 
@@ -40,6 +40,26 @@ namespace MoviesOrganizer.Registros
                 }
 
             }
+        }
+
+        DataTable table = new DataTable();
+        DateTime date = DateTime.Now;
+        private void Graficobutton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Graficobutton_Click_1(object sender, EventArgs e)
+        {
+Categorias categoria = new Categorias();
+
+            table = Ventas.Listado("", "", "");
+
+            chart.Series.Add("Ventas");
+            chart.Series["Series1"].XValueMember = "Fecha";
+            chart.Series["Series1"].YValueMembers = "Monto";
+            chart.DataSource = table;
+            chart.DataBind();
         }
     }
 }

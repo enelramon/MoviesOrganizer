@@ -15,5 +15,11 @@ namespace MoviesOrganizer
         {
             InitializeComponent();
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.CategoriasForm categorias = new Registros.CategoriasForm();
+            categorias.Show();
+        }
     }
 }
